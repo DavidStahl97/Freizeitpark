@@ -238,12 +238,9 @@ public class MDDGenerator {
     _builder.append("// references");
     _builder.newLine();
     {
-      final Function1<EReference, Boolean> _function = new Function1<EReference, Boolean>() {
-        @Override
-        public Boolean apply(final EReference it) {
-          boolean _isMany = it.isMany();
-          return Boolean.valueOf((!_isMany));
-        }
+      final Function1<EReference, Boolean> _function = (EReference it) -> {
+        boolean _isMany = it.isMany();
+        return Boolean.valueOf((!_isMany));
       };
       Iterable<EReference> _filter = IterableExtensions.<EReference>filter(e.getEAllReferences(), _function);
       for(final EReference a_1 : _filter) {
@@ -259,11 +256,8 @@ public class MDDGenerator {
       }
     }
     {
-      final Function1<EReference, Boolean> _function_1 = new Function1<EReference, Boolean>() {
-        @Override
-        public Boolean apply(final EReference it) {
-          return Boolean.valueOf(it.isMany());
-        }
+      final Function1<EReference, Boolean> _function_1 = (EReference it) -> {
+        return Boolean.valueOf(it.isMany());
       };
       Iterable<EReference> _filter_1 = IterableExtensions.<EReference>filter(e.getEAllReferences(), _function_1);
       for(final EReference a_2 : _filter_1) {
@@ -400,12 +394,9 @@ public class MDDGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         {
-          final Function1<EReference, Boolean> _function_2 = new Function1<EReference, Boolean>() {
-            @Override
-            public Boolean apply(final EReference it) {
-              boolean _isMany = it.isMany();
-              return Boolean.valueOf((!_isMany));
-            }
+          final Function1<EReference, Boolean> _function_2 = (EReference it) -> {
+            boolean _isMany = it.isMany();
+            return Boolean.valueOf((!_isMany));
           };
           Iterable<EReference> _filter_2 = IterableExtensions.<EReference>filter(e.getEAllReferences(), _function_2);
           boolean _hasElements_2 = false;
@@ -428,11 +419,8 @@ public class MDDGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         {
-          final Function1<EReference, Boolean> _function_3 = new Function1<EReference, Boolean>() {
-            @Override
-            public Boolean apply(final EReference it) {
-              return Boolean.valueOf(it.isMany());
-            }
+          final Function1<EReference, Boolean> _function_3 = (EReference it) -> {
+            return Boolean.valueOf(it.isMany());
           };
           Iterable<EReference> _filter_3 = IterableExtensions.<EReference>filter(e.getEAllReferences(), _function_3);
           boolean _hasElements_3 = false;
@@ -489,11 +477,8 @@ public class MDDGenerator {
     _builder.append("public String toString() {");
     _builder.newLine();
     {
-      final Function1<EAttribute, Boolean> _function_4 = new Function1<EAttribute, Boolean>() {
-        @Override
-        public Boolean apply(final EAttribute it) {
-          return Boolean.valueOf(MDDGenerator.this.isString(it));
-        }
+      final Function1<EAttribute, Boolean> _function_4 = (EAttribute it) -> {
+        return Boolean.valueOf(this.isString(it));
       };
       boolean _exists = IterableExtensions.<EAttribute>exists(e.getEAllAttributes(), _function_4);
       if (_exists) {
@@ -501,11 +486,8 @@ public class MDDGenerator {
         _builder.append("StringBuilder builder = new StringBuilder();");
         _builder.newLine();
         {
-          final Function1<EAttribute, Boolean> _function_5 = new Function1<EAttribute, Boolean>() {
-            @Override
-            public Boolean apply(final EAttribute it) {
-              return Boolean.valueOf(MDDGenerator.this.isString(it));
-            }
+          final Function1<EAttribute, Boolean> _function_5 = (EAttribute it) -> {
+            return Boolean.valueOf(this.isString(it));
           };
           Iterable<EAttribute> _filter_4 = IterableExtensions.<EAttribute>filter(e.getEAllAttributes(), _function_5);
           for(final EAttribute a_9 : _filter_4) {
