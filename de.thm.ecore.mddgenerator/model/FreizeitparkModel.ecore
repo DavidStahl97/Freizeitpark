@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FreitparkModel" nsURI="http://de/thm/freizeitparkmodel" nsPrefix="de.thm.freizeitparkmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Freizeitpark">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="themenWelten" lowerBound="1"
+        upperBound="-1" eType="#//Themenwelt" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Themenwelt">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attraktionen" eType="#//Attraktionen"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verkaufsLäden" eType="#//Verkaufsläden"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="übernachtungen" eType="#//Übernachtungsmöglichkeiten"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attraktionen">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fahrgeschäfte" lowerBound="1"
+        upperBound="-1" eType="#//Fahrgeschäft" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="shows" lowerBound="1" upperBound="-1"
+        eType="#//Show"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fahrgeschäft"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Show"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Verkaufsläden"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Übernachtungsmöglichkeiten"/>
+</ecore:EPackage>
