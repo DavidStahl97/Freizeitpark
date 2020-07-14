@@ -159,6 +159,7 @@ public class MDDGenerator {
       }
       this.makeProgressAndCheckCanceled(progressMonitor);
       this.createFile(project.getFolder("/META-INF"), "persistence.xml", true, this.compilePersistenceXML(resourceEcore), progressMonitor);
+      this.createFile(project.getFolder("/html-gen"), "Freizeitpark.html", true, this.compileFreizeitparkHMTL(), progressMonitor);
       progressMonitor.done();
     } catch (final Throwable _t) {
       if (_t instanceof Exception) {
@@ -656,6 +657,58 @@ public class MDDGenerator {
       return persistenceConfig.getJdbcUserName();
     }
     return "root";
+  }
+  
+  public CharSequence compileFreizeitparkHMTL() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<!doctype html>");
+    _builder.newLine();
+    _builder.append("<html lang=\"de\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<title>JS-Übung</title>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<meta charset=\"UTF-8\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<body>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<h3>Willkommen im Freizeitpark</h3>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<script>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("let nachname = \'Althaus\';");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("let nachName = \'Waldmaus\';");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("console.log(nachname);");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("console.log(nachName);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</script>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder;
   }
   
   public boolean isString(final EAttribute a) {

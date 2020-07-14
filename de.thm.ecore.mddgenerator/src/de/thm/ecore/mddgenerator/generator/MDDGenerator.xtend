@@ -141,6 +141,7 @@ class MDDGenerator {
 			makeProgressAndCheckCanceled(progressMonitor);
 			
 			createFile(project.getFolder("/META-INF"), "persistence.xml", true, compilePersistenceXML(resourceEcore), progressMonitor);	
+			createFile(project.getFolder("/html-gen"), "Freizeitpark.html", true, compileFreizeitparkHMTL, progressMonitor);	
 			
 			// finish the progress monitor
 			progressMonitor.done;
@@ -294,6 +295,28 @@ class MDDGenerator {
 			return persistenceConfig.jdbcUserName
 		}
 		return "root"
+	}
+	
+	def compileFreizeitparkHMTL() {
+		'''
+			<!doctype html>
+			<html lang="de">
+				<head>
+					<title>JS-Übung</title>
+					<meta charset="UTF-8">
+				</head>
+				<body>
+					<h3>Willkommen im Freizeitpark</h3>
+					<script>
+						let nachname = 'Althaus';
+						let nachName = 'Waldmaus';
+						
+						console.log(nachname);
+						console.log(nachName);
+					</script>
+				</body>
+			</html>
+		'''
 	}
 	
 	def isString(EAttribute a) {
