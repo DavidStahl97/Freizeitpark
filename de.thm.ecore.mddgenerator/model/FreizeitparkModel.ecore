@@ -5,43 +5,74 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="themenWelten" lowerBound="1"
         upperBound="-1" eType="#//Themenwelt" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="design" lowerBound="1"
+        eType="#//Design" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eintrittskarten" lowerBound="1"
+        upperBound="-1" eType="#//Eintrittskarte" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allgemeineInformationen"
+        eType="#//AllgemeineInformationen" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AllgemeineInformationen">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beschreibung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="zeitplan" lowerBound="7"
+        upperBound="-1" eType="#//Tag" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="öffnetUm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schließtUm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Design">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="farbe1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="farbe2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="farbe3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Eintrittskarte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tageGültig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="personenGruppen" lowerBound="1"
+        upperBound="-1" eType="#//Personengruppe" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="übernachtungIn" eType="#//Übernachtungsmöglichkeit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Personengruppe">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typ" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Themenwelt">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attraktionen" eType="#//Attraktionen"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="verkaufsLäden" eType="#//Verkaufsläden"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="übernachtungen" eType="#//Übernachtungsmöglichkeiten"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attraktionen" lowerBound="1"
+        upperBound="-1" eType="#//Attraktion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verkaufsLäden" lowerBound="1"
+        upperBound="-1" eType="#//Verkaufsladen" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="übernachtungensmöglichkeiten"
+        lowerBound="1" upperBound="-1" eType="#//Übernachtungsmöglichkeit" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attraktionen">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fahrgeschäfte" lowerBound="1"
-        upperBound="-1" eType="#//Fahrgeschäft" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="shows" lowerBound="1" upperBound="-1"
-        eType="#//Show" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attraktion">
+  <eClassifiers xsi:type="ecore:EClass" name="Attraktion" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dauer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Fahrgeschäft">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dauer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fahrgeschäft" eSuperTypes="#//Attraktion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mindestGröße" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Show" eSuperTypes="#//Attraktion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Show">
+  <eClassifiers xsi:type="ecore:EClass" name="Gastronomie" abstract="true" eSuperTypes="#//Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dauer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Verkaufsläden">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gastronomien" upperBound="-1"
-        eType="#//Gastronomie" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Restaurant" eSuperTypes="#//Gastronomie">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sterneBewertung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Gastronomie"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Restaurant" eSuperTypes="#//Gastronomie"/>
   <eClassifiers xsi:type="ecore:EClass" name="Imbiss" eSuperTypes="#//Gastronomie"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Übernachtungsmöglichkeiten"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Geschäft" eSuperTypes="#//Verkaufsladen"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Übernachtungsmöglichkeit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kostenProNacht" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hotel" eSuperTypes="#//Übernachtungsmöglichkeit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sternBewertung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Campingplatz" eSuperTypes="#//Übernachtungsmöglichkeit"/>
 </ecore:EPackage>
