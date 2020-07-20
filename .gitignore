@@ -1,3 +1,9 @@
+de.thm.ecore.mddgenerator.edit/
+de.thm.ecore.mddgenerator.editor/
+de.thm.ecore.mddgenerator.tests/
+
+de.thm.ecore.mddgenerator/target/
+
 .metadata
 bin/
 tmp/

@@ -52,4 +52,12 @@
             genModel="model/mymetamodel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated FreizeitparkModel -->
+      <package
+            uri="http://de/thm/freizeitparkmodel"
+            class="FreitparkModel.FreitparkModelPackage"
+            genModel="model/FreizeitparkModel.genmodel"/>
+   </extension>
+
 </plugin>
