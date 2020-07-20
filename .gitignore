@@ -3,6 +3,7 @@ de.thm.ecore.mddgenerator.editor/
 de.thm.ecore.mddgenerator.tests/
 
 de.thm.ecore.mddgenerator/target/
+de.thm.ecore.mddgenerator/xtend-gen/
 
 .metadata
 bin/
