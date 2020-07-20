@@ -329,7 +329,8 @@ class MDDGenerator {
     			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       				<div class="card-body">
                     	
-                        <div class="accordion" id="accordionAttraktion">
+                        <div class="accordion" id="accordionThemenwelt">
+                           	
                            	<div class="card">
                         		<div class="card-header" id="attraktionenOne">
                             		<h3 class="mb-0">
@@ -338,12 +339,40 @@ class MDDGenerator {
                             	</div>
                         	</div>
                         
-                        	<div id="attraktionenCollapsedOne" class="collapse show" aria-labelledby="attraktionenOne" data-parent="#accordionAttraktion">                        
+                        	<div id="attraktionenCollapsedOne" class="collapse show" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
                         		<div class="card-body">
                         			Attraktionen test
                         		</div>                        
                         	</div>
-                        </div>
+                        	
+							<div class="card">
+                        		<div class="card-header" id="verkaufOne">
+                            		<h3 class="mb-0">
+                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
+                                	</h3>
+                            	</div>
+                        	</div>
+                        
+                        	<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenwelt">                        
+                        		<div class="card-body">
+                        			Verkauf test
+                        		</div>                        
+                        	</div>   
+                        	
+							<div class="card">
+                        		<div class="card-header" id="uebernachtungOne">
+                            		<h3 class="mb-0">
+                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
+                                	</h3>
+                            	</div>
+                        	</div>
+                        
+                        	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenwelt">                        
+                        		<div class="card-body">
+                        			Übernachtung test
+                        		</div>                        
+                        	</div>                           	                     	
+                        </div>                                            
                         
                     </div>
     			</div>
