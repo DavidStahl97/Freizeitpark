@@ -357,6 +357,25 @@ class MDDGenerator {
 		</section>
 		
 		<div class="container">
+		
+			<div class="accordion" id="accordionOeffungszeit" style="margin-bottom: 20px">
+			  <div class="card">
+			    <div class="card-header" id="headingOeffnungszeit">
+			      <h2 class="mb-0">
+			        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOeffnungszeit" aria-expanded="true" aria-controls="collapseOeffnungszeit">
+			          Öffnungszeiten
+			        </button>
+			      </h2>
+			    </div>
+			
+			    <div id="collapseOeffnungszeit" class="collapse" aria-labelledby="headingOeffnungszeit" data-parent="#accordionOeffungszeit">
+			      <div class="card-body">
+					«generateOeffungszeiten»			        
+			      </div>
+			    </div>
+			  </div>			  
+			</div>
+			
 			«generateThemenwelt(1)»
 		</div>
 		
@@ -369,6 +388,37 @@ class MDDGenerator {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
+		'''
+	}
+	
+	def generateOeffungszeiten() {
+		'''
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tag</th>
+      <th scope="col">Von</th>
+      <th scope="col">Bis</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Montag</th>
+      <td>08:00</td>
+      <td>17:00</td>
+    </tr>
+    <tr>
+      <th scope="row">Dienstag</th>
+      <td>08:00</td>
+      <td>17:00</td>
+    </tr>
+    <tr>
+      <th scope="row">Mittwoch</th>
+      <td>08:00</td>
+      <td>17:00</td>
+    </tr>    
+  </tbody>
+</table>		
 		'''
 	}
 	
@@ -386,7 +436,7 @@ class MDDGenerator {
 			      				</h2>
 			    			</div>
 			
-			    			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+			    			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 			      				<div class="card-body">
 			                    	
 			                        <div class="accordion" id="accordionThemenwelt">
@@ -399,7 +449,7 @@ class MDDGenerator {
 			                            	</div>
 			                        	</div>
 			                        
-			                        	<div id="attraktionenCollapsedOne" class="collapse show" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
+			                        	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
 			                        		<div class="card-body">
 			                        			
 			                        			<div class="row">
