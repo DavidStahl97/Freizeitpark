@@ -450,14 +450,14 @@ class MDDGenerator {
 		'''
 		<div class="accordion" id="accordionThemenweltInner«themenweltId»">                       	
 			<div class="card">
-				<div class="card-header" id="attraktionenOne">
+				<div class="card-header" id="attraktionen«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsed«themenweltId»" aria-expanded="true" aria-controls="attraktionenCollapsed«themenweltId»"> Attraktionen </button>
 					</h3>
 				</div>
 		
 					  						                        
-				<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+				<div id="attraktionenCollapsed«themenweltId»" class="collapse" aria-labelledby="attraktionen«themenweltId»" data-parent="#accordionThemenweltInner«themenweltId»">                        
 					<div class="card-body">
 						«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      			  						                        		
 					</div>                        
@@ -466,13 +466,13 @@ class MDDGenerator {
 					  						                        	
 					  						                        	
 			<div class="card">
-				<div class="card-header" id="verkaufOne">
+				<div class="card-header" id="verkauf«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsed«themenweltId»" aria-expanded="true" aria-controls="verkaufCollapsed«themenweltId»"> Verkäufe </button>
 					</h3>
 				</div>
 					  						                        
-				<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+				<div id="verkaufCollapsed«themenweltId»" class="collapse" aria-labelledby="verkauf«themenweltId»" data-parent="#accordionThemenweltInner«themenweltId»">                        
 					<div class="card-body">
 						«generateVerkaufslaeden(t)»
 					</div>                        
@@ -480,13 +480,13 @@ class MDDGenerator {
 			</div> 
 					  						                        	
 			<div class="card">
-				<div class="card-header" id="uebernachtungOne">
+				<div class="card-header" id="uebernachtung«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsed«themenweltId»" aria-expanded="true" aria-controls="uebernachtungCollapsed«themenweltId»"> Übernachtung </button>
 					 </h3>
 				</div>
 					  						                        
-				<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+				<div id="uebernachtungCollapsed«themenweltId»" class="collapse" aria-labelledby="uebernachtung«themenweltId»" data-parent="#accordionThemenweltInner«themenweltId»">                        
 					<div class="card-body">
 						«generateUebernachtung(t)»
 					 </div>                        
