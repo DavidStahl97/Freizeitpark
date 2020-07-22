@@ -555,7 +555,7 @@ class MDDGenerator {
 		«var divClosed = true»
 		«FOR a : themenwelt.übernachtungensmöglichkeiten»
 			«IF i % 3 == 0»
-				<div class="row"> <!--«divClosed = false» -->
+				<div class="row" style="margin-bottom: 20px;"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
@@ -592,7 +592,7 @@ class MDDGenerator {
 		«var divClosed = true»
 		«FOR a : themenwelt.verkaufsLäden»
 			«IF i % 3 == 0»
-				<div class="row"> <!--«divClosed = false» -->
+				<div class="row" style="margin-bottom: 20px;"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
@@ -635,7 +635,7 @@ class MDDGenerator {
 		«var divClosed = true» 
 		«FOR a : themenwelt.attraktionen»
 			«IF i % 3 == 0»
-				<div class="row"> <!--«divClosed = false» -->
+				<div class="row" style="margin-bottom: 20px;"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
