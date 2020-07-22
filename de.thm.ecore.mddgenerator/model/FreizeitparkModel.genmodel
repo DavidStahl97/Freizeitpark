@@ -48,6 +48,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Attraktion/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Attraktion/dauer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Attraktion/anzahlPlätze"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Attraktion/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Attraktion/beschreibung"/>
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Fahrgeschäft">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Fahrgeschäft/mindestGröße"/>
@@ -55,6 +57,7 @@
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Show"/>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Verkaufsladen">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Verkaufsladen/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Verkaufsladen/image"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FreizeitparkModel.ecore#//Gastronomie">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Gastronomie/anzahlPlätze"/>
@@ -67,6 +70,7 @@
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Übernachtungsmöglichkeit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/kostenProNacht"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/image"/>
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Hotel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Hotel/sternBewertung"/>

@@ -52,6 +52,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dauer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beschreibung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fahrgeschäft" eSuperTypes="#//Attraktion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mindestGröße" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -59,6 +61,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Show" eSuperTypes="#//Attraktion"/>
   <eClassifiers xsi:type="ecore:EClass" name="Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gastronomie" abstract="true" eSuperTypes="#//Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -71,6 +74,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Übernachtungsmöglichkeit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kostenProNacht" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hotel" eSuperTypes="#//Übernachtungsmöglichkeit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sternBewertung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

@@ -14,6 +14,10 @@ import de.thm.ecore.mddgenerator.util.XmlFormatter
 import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EcorePackage
 import mymetamodel.PersistenceConfig
+import FreizeitparkModel.Freizeitpark
+import FreizeitparkModel.AllgemeineInformationen
+import FreizeitparkModel.Themenwelt
+import FreizeitparkModel.Fahrgeschäft
 
 /**
  * The generator for ecore files.
@@ -345,12 +349,8 @@ class MDDGenerator {
 		
 		<section class="jumbotron text-center">
 			<div class="container">
-		  		<h1>Freizeitpark XYZ</h1>
-		      	<p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-		      	<p>
-		        	<a href="#" class="btn btn-primary my-2">Main call to action</a>
-		        	<a href="#" class="btn btn-secondary my-2">Secondary action</a>
-		    	</p>
+		  		<h1>«resMymetamodelFile.allContents.toIterable.filter(typeof(Freizeitpark)).head.name»</h1>
+		      	<p class="lead text-muted">«resMymetamodelFile.allContents.toIterable.filter(typeof(AllgemeineInformationen)).head.beschreibung»</p>
 			</div>
 		</section>
 		
@@ -374,7 +374,7 @@ class MDDGenerator {
 			  </div>			  
 			</div>
 			
-			«generateThemenwelt(1)»
+			«generateThemenwelt()»
 		</div>
 		
 	</main>                	
@@ -400,121 +400,119 @@ class MDDGenerator {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">Montag</th>
-      <td>08:00</td>
-      <td>17:00</td>
-    </tr>
-    <tr>
-      <th scope="row">Dienstag</th>
-      <td>08:00</td>
-      <td>17:00</td>
-    </tr>
-    <tr>
-      <th scope="row">Mittwoch</th>
-      <td>08:00</td>
-      <td>17:00</td>
-    </tr>    
+  «FOR o : resMymetamodelFile.allContents.toIterable.filter(typeof(AllgemeineInformationen)).head.zeitplan»
+      <tr>
+        <th scope="row">«o.name»</th>
+        <td>«o.öffnetUm»</td>
+        <td>«o.schließtUm»</td>
+      </tr>
+  «ENDFOR»
   </tbody>
 </table>		
 		'''
 	}
 	
-	def generateThemenwelt(int count) {
+	def generateThemenwelt() {
 		'''
-			«FOR i : (1..count).toList»
+		«var themenweltCount = 0»
 					<div class="accordion" id="accordionExample">
 			  			
-			            <div class="card">
-			    			<div class="card-header" id="headingOne">
-			      				<h2 class="mb-0">
-			        				<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			          					Themenwelt 1
-			        				</button>
-			      				</h2>
-			    			</div>
-			
-			    			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-			      				<div class="card-body">
-			                    	
-			                        <div class="accordion" id="accordionThemenwelt">
-			                           	
-			                           	<div class="card">
-			                        		<div class="card-header" id="attraktionenOne">
-			                            		<h3 class="mb-0">
-			                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
-			                                	</h3>
-			                            	</div>
-			                        	</div>
-			                        
-			                        	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
-			                        		<div class="card-body">
-			                        			
-			                        			<div class="row">
-			                        				«generateAttraktionen(3)»			                        				                    				                        				   			                      			                      
-			                        			</div>
-			                        		</div>                        
-			                        	</div>
-			                        	
-										<div class="card">
-			                        		<div class="card-header" id="verkaufOne">
-			                            		<h3 class="mb-0">
-			                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
-			                                	</h3>
-			                            	</div>
-			                        	</div>
-			                        
-			                        	<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenwelt">                        
-			                        		<div class="card-body">
-			                        			Verkauf test
-			                        		</div>                        
-			                        	</div>   
-			                        	
-										<div class="card">
-			                        		<div class="card-header" id="uebernachtungOne">
-			                            		<h3 class="mb-0">
-			                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
-			                                	</h3>
-			                            	</div>
-			                        	</div>
-			                        
-			                        	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenwelt">                        
-			                        		<div class="card-body">
-			                        			Übernachtung test
-			                        		</div>                        
-			                        	</div>                           	                     	
-			                        </div>                                            
-			                        
-			                    </div>
-			    			</div>
-			  			</div>
-			            
+			  			«FOR t : resMymetamodelFile.allContents.toIterable.filter(typeof(Themenwelt))»
+			  			<div class="card">
+			  						    			<div class="card-header" id="themenwelt«themenweltCount++»">
+			  						      				<h2 class="mb-0">
+			  						        				<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
+			  						          					«t.name»
+			  						        				</button>
+			  						      				</h2>
+			  						    			</div>
+			  						
+			  						    			<div id="themenweltCollapsed«themenweltCount»" class="collapse" aria-labelledby="themenwelt«themenweltCount»" data-parent="#accordionExample">
+			  						      				<div class="card-body">
+			  						                    	
+			  						                        <div class="accordion" id="accordionThemenwelt">
+			  						                           	
+			  						                           	<div class="card">
+			  						                        		<div class="card-header" id="attraktionenOne">
+			  						                            		<h3 class="mb-0">
+			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
+			  						                                	</h3>
+			  						                            	</div>
+			  						                        	</div>
+			  						                        
+			  						                        	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
+			  						                        		<div class="card-body">
+			  						                        			
+			  						                        				«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      
+			  						                        		
+			  						                        		</div>                        
+			  						                        	</div>
+			  						                        	
+			  						                        	<!--
+			  													<div class="card">
+			  						                        		<div class="card-header" id="verkaufOne">
+			  						                            		<h3 class="mb-0">
+			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
+			  						                                	</h3>
+			  						                            	</div>
+			  						                        	</div>
+			  						                        
+			  						                        	<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenwelt">                        
+			  						                        		<div class="card-body">
+			  						                        			Verkauf test
+			  						                        		</div>                        
+			  						                        	</div>   
+			  						                        	
+			  													<div class="card">
+			  						                        		<div class="card-header" id="uebernachtungOne">
+			  						                            		<h3 class="mb-0">
+			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
+			  						                                	</h3>
+			  						                            	</div>
+			  						                        	</div>
+			  						                        
+			  						                        	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenwelt">                        
+			  						                        		<div class="card-body">
+			  						                        			Übernachtung test
+			  						                        		</div>                        
+			  						                        	</div>
+			  						                        	-->                           	                     	
+			  						                        </div>                                            
+			  						                        
+			  						                    </div>
+			  						    			</div>
+			  						  			</div>
+			  			«ENDFOR»
 			    	</div>
-			«ENDFOR»
 		'''
 	}
 	
-	def generateAttraktionen(int count) {
+	def generateAttraktionen(Themenwelt themenwelt) {
 		'''
-		«FOR i : (1..count).toList»
+		«var i = 0»
+		«FOR a : themenwelt.attraktionen»
+			«IF i % 3 == 0»
+				<div class="row">
+			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
-				<img src="https://img.welt.de/img/vermischtes/mobile115834903/2842500137-ci102l-w1024/zgbdc5-5prhz8vjj8oyiv9b13b-original-jpg.jpg" class="card-img-top" alt="Achterbahn"/>
+				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
 				<div class="card-body">
-					<h5 class="card-title">Achterbahn 1</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<h5 class="card-title">«a.name»</h5>
+					<p class="card-text">«a.beschreibung»</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Dauer</li>
-					<li class="list-group-item">Anzahl Plätze</li>
-					<li class="list-group-item">Vestibulum at eros</li>
+					<li class="list-group-item">Dauer «a.dauer»</li>
+					<li class="list-group-item">Anzahl Plätze «a.anzahlPlätze»</li>
+					«IF a instanceof Fahrgeschäft»
+					<li class="list-group-item">Mindestgröße «a.mindestGröße»</li>
+					«ENDIF»
 				</ul>
-				<div class="card-body">
-					<a href="#" class="card-link">Card link</a>
-					<a href="#" class="card-link">Another link</a>
-				</div>
 			</div>                          					
-		</div>			
+		</div>
+			«IF i++ % 3 == 2»
+				</div>
+			«ENDIF»		
 		«ENDFOR»
 		'''
 	}
