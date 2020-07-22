@@ -424,69 +424,66 @@ class MDDGenerator {
 			  			
 			  			«FOR t : resMymetamodelFile.allContents.toIterable.filter(typeof(Themenwelt))»
 			  			<div class="card">
-			  						    			<div class="card-header" id="themenwelt«themenweltCount++»">
-			  						      				<h2 class="mb-0">
-			  						        				<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
-			  						          					«t.name»
-			  						        				</button>
-			  						      				</h2>
-			  						    			</div>
+			  				<div class="card-header" id="themenwelt«themenweltCount++»">
+			  					<h2 class="mb-0">
+			  						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
+			  							«t.name»
+			  						</button>
+			  					</h2>
+			  				</div>
 			  						
-			  						    			<div id="themenweltCollapsed«themenweltCount»" class="collapse" aria-labelledby="themenwelt«themenweltCount»" data-parent="#accordionExample">
-			  						      				<div class="card-body">
-			  						                    	
-			  						                        <div class="accordion" id="accordionThemenwelt">
-			  						                           	
-			  						                           	<div class="card">
-			  						                        		<div class="card-header" id="attraktionenOne">
-			  						                            		<h3 class="mb-0">
-			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
-			  						                                	</h3>
-			  						                            	</div>
-			  						                        	</div>
+			  				<div id="themenweltCollapsed«themenweltCount»" class="collapse" aria-labelledby="themenwelt«themenweltCount»" data-parent="#accordionExample">
+			  					<div class="card-body">
+			  					
+			  						<div class="accordion" id="accordionThemenweltInner«themenweltCount»">                       	
+			  							<div class="card">
+											<div class="card-header" id="attraktionenOne">
+			  						        	<h3 class="mb-0">
+			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
+			  						            </h3>
+			  						        </div>
+
 			  						                        
-			  						                        	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenwelt">                        
-			  						                        		<div class="card-body">
-			  						                        			
-			  						                        				«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      
-			  						                        		
-			  						                        		</div>                        
-			  						                        	</div>
+			  						    	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
+			  						    		<div class="card-body">
+													«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      			  						                        		
+			  						        	</div>                        
+			  						    	</div>
+			  						    </div>
 			  						                        	
 			  						                        	
-			  													<div class="card">
-			  						                        		<div class="card-header" id="verkaufOne">
-			  						                            		<h3 class="mb-0">
-			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
-			  						                                	</h3>
-			  						                            	</div>
-			  						                        	</div>
+			  							<div class="card">
+			  						    	<div class="card-header" id="verkaufOne">
+			  						        	<h3 class="mb-0">
+			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
+			  						            </h3>
+			  						        </div>
 			  						                        
-			  						                        	<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenwelt">                        
-			  						                        		<div class="card-body">
-			  						                        				«generateVerkaufslaeden(t)»
-			  						                        		</div>                        
-			  						                        	</div>   
+											<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
+			  						    		<div class="card-body">
+			  						        		«generateVerkaufslaeden(t)»
+			  						        	</div>                        
+			  						     	</div>  
+			  						     </div> 
 			  						                        	
-			  													<div class="card">
-			  						                        		<div class="card-header" id="uebernachtungOne">
-			  						                            		<h3 class="mb-0">
-			  						                                		<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
-			  						                                	</h3>
-			  						                            	</div>
-			  						                        	</div>
+			  							<div class="card">
+			  						    	<div class="card-header" id="uebernachtungOne">
+			  						        	<h3 class="mb-0">
+			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
+			  						            </h3>
+			  						        </div>
 			  						                        
-			  						                        	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenwelt">                        
-			  						                        		<div class="card-body">
-			  						                        			«generateUebernachtung(t)»
-			  						                        		</div>                        
-			  						                        	</div>
-			  						                                                  	                     	
-			  						                        </div>                                            
+			  						    	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
+			  						    		<div class="card-body">
+			  						        		«generateUebernachtung(t)»
+			  						        	</div>                        
+			  						    	</div>
+			  						    </div>                                              	                     	
+									</div>                                            
 			  						                        
-			  						                    </div>
-			  						    			</div>
-			  						  			</div>
+			  				    </div>
+			  				</div>
+			  			</div>
 			  			«ENDFOR»
 			    	</div>
 		'''
