@@ -435,57 +435,63 @@ class MDDGenerator {
 			  				<div id="themenweltCollapsed«themenweltCount»" class="collapse" aria-labelledby="themenwelt«themenweltCount»" data-parent="#accordionExample">
 			  					<div class="card-body">
 			  					
-			  						<div class="accordion" id="accordionThemenweltInner«themenweltCount»">                       	
-			  							<div class="card">
-											<div class="card-header" id="attraktionenOne">
-			  						        	<h3 class="mb-0">
-			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
-			  						            </h3>
-			  						        </div>
-
-			  						                        
-			  						    	<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
-			  						    		<div class="card-body">
-													«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      			  						                        		
-			  						        	</div>                        
-			  						    	</div>
-			  						    </div>
-			  						                        	
-			  						                        	
-			  							<div class="card">
-			  						    	<div class="card-header" id="verkaufOne">
-			  						        	<h3 class="mb-0">
-			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
-			  						            </h3>
-			  						        </div>
-			  						                        
-											<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
-			  						    		<div class="card-body">
-			  						        		«generateVerkaufslaeden(t)»
-			  						        	</div>                        
-			  						     	</div>  
-			  						     </div> 
-			  						                        	
-			  							<div class="card">
-			  						    	<div class="card-header" id="uebernachtungOne">
-			  						        	<h3 class="mb-0">
-			  						            	<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
-			  						            </h3>
-			  						        </div>
-			  						                        
-			  						    	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenweltInner«themenweltCount»">                        
-			  						    		<div class="card-body">
-			  						        		«generateUebernachtung(t)»
-			  						        	</div>                        
-			  						    	</div>
-			  						    </div>                                              	                     	
-									</div>                                            
+			  						 «generateThemenweltInner(themenweltCount, t)»          
 			  						                        
 			  				    </div>
 			  				</div>
 			  			</div>
 			  			«ENDFOR»
 			    	</div>
+		'''
+	}
+	
+	def generateThemenweltInner(int themenweltId, Themenwelt t) {
+		'''
+		<div class="accordion" id="accordionThemenweltInner«themenweltId»">                       	
+			<div class="card">
+				<div class="card-header" id="attraktionenOne">
+					<h3 class="mb-0">
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsedOne" aria-expanded="true" aria-controls="attraktionenCollapsedOne"> Attraktionen </button>
+					</h3>
+				</div>
+		
+					  						                        
+				<div id="attraktionenCollapsedOne" class="collapse" aria-labelledby="attraktionenOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+					<div class="card-body">
+						«generateAttraktionen(t)»			                        				                    				                        				   			                      			                      			  						                        		
+					</div>                        
+				</div>
+			</div>
+					  						                        	
+					  						                        	
+			<div class="card">
+				<div class="card-header" id="verkaufOne">
+					<h3 class="mb-0">
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsedOne" aria-expanded="true" aria-controls="verkaufCollapsedOne"> Verkäufe </button>
+					</h3>
+				</div>
+					  						                        
+				<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+					<div class="card-body">
+						«generateVerkaufslaeden(t)»
+					</div>                        
+				</div>  
+			</div> 
+					  						                        	
+			<div class="card">
+				<div class="card-header" id="uebernachtungOne">
+					<h3 class="mb-0">
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsedOne" aria-expanded="true" aria-controls="uebernachtungCollapsedOne"> Übernachtung </button>
+					 </h3>
+				</div>
+					  						                        
+				<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenweltInner«themenweltId»">                        
+					<div class="card-body">
+						«generateUebernachtung(t)»
+					 </div>                        
+				</div>
+			</div>                                              	                     	
+		</div>									</div>                                 
 		'''
 	}
 	
