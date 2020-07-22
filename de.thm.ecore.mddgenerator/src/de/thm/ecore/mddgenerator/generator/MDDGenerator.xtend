@@ -23,6 +23,7 @@ import FreizeitparkModel.Restaurant
 import FreizeitparkModel.Hotel
 import FreizeitparkModel.Imbiss
 import FreizeitparkModel.Geschäft
+import FreizeitparkModel.Eintrittskarte
 
 /**
  * The generator for ecore files.
@@ -379,8 +380,30 @@ class MDDGenerator {
 			  </div>			  
 			</div>
 			
+			<div class="accordion" id="accordionEintrittskarten" style="margin-bottom: 20px">
+						  <div class="card">
+						    <div class="card-header" id="headingEintritt">
+						      <h2 class="mb-0">
+						        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseEintritt" aria-expanded="true" aria-controls="collapseEintritt">
+						          Eintrittskarten
+						        </button>
+						      </h2>
+						    </div>
+						
+						    <div id="collapseEintritt" class="collapse" aria-labelledby="headingEintritt" data-parent="#accordionEintrittskarten">
+						      <div class="card-body">
+								«generateEintrittskarten»			        
+						      </div>
+						    </div>
+						  </div>			  
+						</div>
+						
+						
+			
 			«generateThemenwelt()»
 		</div>
+		
+		
 		
 	</main>                	
   	
@@ -391,6 +414,37 @@ class MDDGenerator {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
+		'''
+	}
+	
+	def generateEintrittskarten() {
+		'''
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Preis</th>
+      <th scope="col">Übernachtung in</th>     
+      <th scope="col">Tage gültig</th>     
+      <th scope="col">Für</th>     
+    </tr>
+  </thead>
+  <tbody>
+  «FOR o : resMymetamodelFile.allContents.toIterable.filter(typeof(Eintrittskarte))»
+      <tr>
+        <th scope="row">«o.name»</th>
+        <td>«o.preis» €</td>
+        <td>«o.übernachtungIn.name»</td>
+        <td>«o.tageGültig»</td>
+         <td>
+         «FOR p : o.personenGruppen»
+         <p> «p.typ» («p.anzahl»)</p> </br>
+         «ENDFOR»
+         </td>
+      </tr>
+  «ENDFOR»
+  </tbody>
+</table>		
 		'''
 	}
 	
@@ -579,10 +633,10 @@ class MDDGenerator {
 	def generateAttraktionen(Themenwelt themenwelt) {
 		'''
 		«var i = 0»
-		«var divClosed = true» <!--«divClosed = false» -->
+		«var divClosed = true» 
 		«FOR a : themenwelt.attraktionen»
 			«IF i % 3 == 0»
-				<div class="row">
+				<div class="row"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
