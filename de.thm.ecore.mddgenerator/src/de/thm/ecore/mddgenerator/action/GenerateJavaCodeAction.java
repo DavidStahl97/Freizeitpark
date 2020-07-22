@@ -58,7 +58,7 @@ public class GenerateJavaCodeAction implements IObjectActionDelegate {
 		
 		// load the mymetamodel file
 		URI uriMymetamodelFile = URI.createFileURI(fileEcore.getRawLocation()
-				.toString().replace(".ecore", ".mymetamodel"));
+				.toString().replace(".ecore", ".freizeitparkmodel"));
 		Resource resMymetamodelFile = resourceSet.createResource(uriMymetamodelFile);
 		try {
 			resMymetamodelFile.load(Collections.emptyMap());
