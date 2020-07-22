@@ -20,13 +20,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: mymetamodel,
  mymetamodel.impl,
- mymetamodel.util,
- FreitparkModel,
- FreitparkModel.impl,
- FreitparkModel.util,
- FreizeitparkModel,
- FreizeitparkModel.impl,
- FreizeitparkModel.util
+ mymetamodel.util
 Import-Package: org.eclipse.core.commands,
  org.eclipse.emf.common.util,
  org.eclipse.jface.viewers,
