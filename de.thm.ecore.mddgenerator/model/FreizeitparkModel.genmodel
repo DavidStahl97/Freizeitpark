@@ -58,6 +58,7 @@
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Verkaufsladen">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Verkaufsladen/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Verkaufsladen/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Verkaufsladen/beschreibung"/>
     </genClasses>
     <genClasses image="false" ecoreClass="FreizeitparkModel.ecore#//Gastronomie">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Gastronomie/anzahlPlätze"/>
@@ -65,12 +66,17 @@
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Restaurant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Restaurant/sterneBewertung"/>
     </genClasses>
-    <genClasses ecoreClass="FreizeitparkModel.ecore#//Imbiss"/>
-    <genClasses ecoreClass="FreizeitparkModel.ecore#//Geschäft"/>
+    <genClasses ecoreClass="FreizeitparkModel.ecore#//Imbiss">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Imbiss/spezialGericht"/>
+    </genClasses>
+    <genClasses ecoreClass="FreizeitparkModel.ecore#//Geschäft">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Geschäft/verkaufsFläche"/>
+    </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Übernachtungsmöglichkeit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/kostenProNacht"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Übernachtungsmöglichkeit/beschreibung"/>
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Hotel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Hotel/sternBewertung"/>

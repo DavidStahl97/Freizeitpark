@@ -62,6 +62,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beschreibung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Gastronomie" abstract="true" eSuperTypes="#//Verkaufsladen">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="anzahlPlätze" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -69,12 +70,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="Restaurant" eSuperTypes="#//Gastronomie">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sterneBewertung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Imbiss" eSuperTypes="#//Gastronomie"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Geschäft" eSuperTypes="#//Verkaufsladen"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Imbiss" eSuperTypes="#//Gastronomie">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spezialGericht" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Geschäft" eSuperTypes="#//Verkaufsladen">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verkaufsFläche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Übernachtungsmöglichkeit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kostenProNacht" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beschreibung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Hotel" eSuperTypes="#//Übernachtungsmöglichkeit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sternBewertung" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

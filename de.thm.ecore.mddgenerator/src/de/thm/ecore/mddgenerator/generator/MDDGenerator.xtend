@@ -18,6 +18,11 @@ import FreizeitparkModel.Freizeitpark
 import FreizeitparkModel.AllgemeineInformationen
 import FreizeitparkModel.Themenwelt
 import FreizeitparkModel.Fahrgeschäft
+import FreizeitparkModel.Gastronomie
+import FreizeitparkModel.Restaurant
+import FreizeitparkModel.Hotel
+import FreizeitparkModel.Imbiss
+import FreizeitparkModel.Geschäft
 
 /**
  * The generator for ecore files.
@@ -448,7 +453,7 @@ class MDDGenerator {
 			  						                        		</div>                        
 			  						                        	</div>
 			  						                        	
-			  						                        	<!--
+			  						                        	
 			  													<div class="card">
 			  						                        		<div class="card-header" id="verkaufOne">
 			  						                            		<h3 class="mb-0">
@@ -459,7 +464,7 @@ class MDDGenerator {
 			  						                        
 			  						                        	<div id="verkaufCollapsedOne" class="collapse" aria-labelledby="verkaufOne" data-parent="#accordionThemenwelt">                        
 			  						                        		<div class="card-body">
-			  						                        			Verkauf test
+			  						                        				«generateVerkaufslaeden(t)»
 			  						                        		</div>                        
 			  						                        	</div>   
 			  						                        	
@@ -473,10 +478,10 @@ class MDDGenerator {
 			  						                        
 			  						                        	<div id="uebernachtungCollapsedOne" class="collapse" aria-labelledby="uebernachtungOne" data-parent="#accordionThemenwelt">                        
 			  						                        		<div class="card-body">
-			  						                        			Übernachtung test
+			  						                        			«generateUebernachtung(t)»
 			  						                        		</div>                        
 			  						                        	</div>
-			  						                        	-->                           	                     	
+			  						                                                  	                     	
 			  						                        </div>                                            
 			  						                        
 			  						                    </div>
@@ -484,6 +489,74 @@ class MDDGenerator {
 			  						  			</div>
 			  			«ENDFOR»
 			    	</div>
+		'''
+	}
+	
+	def generateUebernachtung(Themenwelt themenwelt) {
+		'''
+		«var i = 0»
+		«FOR a : themenwelt.übernachtungensmöglichkeiten»
+			«IF i % 3 == 0»
+				<div class="row">
+			«ENDIF»
+		<div class="col-sm">
+			<div class="card" style="width: 18rem;">
+				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
+				<div class="card-body">
+					<h5 class="card-title">«a.name»</h5>
+					<p class="card-text">«a.beschreibung»</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					
+					<li class="list-group-item">Kosten pro Nacht: «a.kostenProNacht»</li>
+					
+					«IF a instanceof Hotel»
+					<li class="list-group-item">Sternebewertung: «a.sternBewertung»</li>
+					«ENDIF»
+				</ul>
+			</div>                          					
+		</div>
+			«IF i++ % 3 == 2»
+				</div>
+			«ENDIF»		
+		«ENDFOR»
+		'''
+	}
+	
+	def generateVerkaufslaeden(Themenwelt themenwelt) {
+		'''
+		«var i = 0»
+		«FOR a : themenwelt.verkaufsLäden»
+			«IF i % 3 == 0»
+				<div class="row">
+			«ENDIF»
+		<div class="col-sm">
+			<div class="card" style="width: 18rem;">
+				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
+				<div class="card-body">
+					<h5 class="card-title">«a.name»</h5>
+					<p class="card-text">«a.beschreibung»</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					«IF a instanceof Gastronomie»
+					<li class="list-group-item">Anzahl Plätz: «a.anzahlPlätze»</li>
+					«ENDIF»
+					«IF a instanceof Restaurant»
+					<li class="list-group-item">Sternebewertung: «a.sterneBewertung»</li>
+					«ENDIF»
+					«IF a instanceof Imbiss»
+					<li class="list-group-item">Spezialgericht: «a.spezialGericht»</li>
+					«ENDIF»
+					«IF a instanceof Geschäft»
+					<li class="list-group-item">Verkaufsfläche: «a.verkaufsFläche»</li>
+					«ENDIF»
+				</ul>
+			</div>                          					
+		</div>
+			«IF i++ % 3 == 2»
+				</div>
+			«ENDIF»		
+		«ENDFOR»
 		'''
 	}
 	
