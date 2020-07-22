@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>FreizeitparkModel.ecore</foreignModel>
-  <genPackages prefix="FreitparkModel" disposableProviderFactory="true" ecorePackage="FreizeitparkModel.ecore#/">
+  <genPackages prefix="FreizeitparkModel" disposableProviderFactory="true" ecorePackage="FreizeitparkModel.ecore#/">
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Freizeitpark">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FreizeitparkModel.ecore#//Freizeitpark/themenWelten"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Freizeitpark/name"/>
@@ -20,6 +20,7 @@
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Tag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Tag/öffnetUm"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Tag/schließtUm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Tag/name"/>
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Design">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe1"/>

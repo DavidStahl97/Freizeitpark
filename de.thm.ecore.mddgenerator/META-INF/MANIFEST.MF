@@ -23,7 +23,10 @@ Export-Package: mymetamodel,
  mymetamodel.util,
  FreitparkModel,
  FreitparkModel.impl,
- FreitparkModel.util
+ FreitparkModel.util,
+ FreizeitparkModel,
+ FreizeitparkModel.impl,
+ FreizeitparkModel.util
 Import-Package: org.eclipse.core.commands,
  org.eclipse.emf.common.util,
  org.eclipse.jface.viewers,
