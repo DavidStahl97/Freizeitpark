@@ -499,9 +499,10 @@ class MDDGenerator {
 	def generateUebernachtung(Themenwelt themenwelt) {
 		'''
 		«var i = 0»
+		«var divClosed = true»
 		«FOR a : themenwelt.übernachtungensmöglichkeiten»
 			«IF i % 3 == 0»
-				<div class="row">
+				<div class="row"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
@@ -521,18 +522,22 @@ class MDDGenerator {
 			</div>                          					
 		</div>
 			«IF i++ % 3 == 2»
-				</div>
+				</div> <!--«divClosed = true» -->
 			«ENDIF»		
 		«ENDFOR»
+		«IF divClosed == false»
+			</div>
+		«ENDIF»
 		'''
 	}
 	
 	def generateVerkaufslaeden(Themenwelt themenwelt) {
 		'''
 		«var i = 0»
+		«var divClosed = true»
 		«FOR a : themenwelt.verkaufsLäden»
 			«IF i % 3 == 0»
-				<div class="row">
+				<div class="row"> <!--«divClosed = false» -->
 			«ENDIF»
 		<div class="col-sm">
 			<div class="card" style="width: 18rem;">
@@ -558,15 +563,19 @@ class MDDGenerator {
 			</div>                          					
 		</div>
 			«IF i++ % 3 == 2»
-				</div>
+				</div> <!--«divClosed = true» -->
 			«ENDIF»		
 		«ENDFOR»
+		«IF divClosed == false»
+			</div>
+		«ENDIF»
 		'''
 	}
 	
 	def generateAttraktionen(Themenwelt themenwelt) {
 		'''
 		«var i = 0»
+		«var divClosed = true» <!--«divClosed = false» -->
 		«FOR a : themenwelt.attraktionen»
 			«IF i % 3 == 0»
 				<div class="row">
@@ -588,9 +597,12 @@ class MDDGenerator {
 			</div>                          					
 		</div>
 			«IF i++ % 3 == 2»
-				</div>
+				</div> <!--«divClosed = true» -->
 			«ENDIF»		
 		«ENDFOR»
+		«IF divClosed == false»
+			</div>
+		«ENDIF»
 		'''
 	}
 	
