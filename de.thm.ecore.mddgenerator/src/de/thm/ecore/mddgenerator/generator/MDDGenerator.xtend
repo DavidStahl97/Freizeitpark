@@ -424,7 +424,7 @@ class MDDGenerator {
 			  			
 			  			«FOR t : resMymetamodelFile.allContents.toIterable.filter(typeof(Themenwelt))»
 			  			<div class="card">
-			  				<div class="card-header" id="themenwelt«themenweltCount++»">
+			  				<div class="card-header" id="themenwelt«themenweltCount»">
 			  					<h2 class="mb-0">
 			  						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
 			  							«t.name»
@@ -440,6 +440,7 @@ class MDDGenerator {
 			  				    </div>
 			  				</div>
 			  			</div>
+			  			<!--«themenweltCount++»-->
 			  			«ENDFOR»
 			    	</div>
 		'''
