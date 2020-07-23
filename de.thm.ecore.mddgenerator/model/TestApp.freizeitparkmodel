@@ -12,8 +12,13 @@
   </themenWelten>
   <themenWelten name="Transsilvanien">
     <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Bobbahn" dauer="3" anzahlPlätze="10" image="https://www.heide-park.de/media/kwomuuqe/heide-park-resort_bobbahn_001.jpg" beschreibung="Schießt durch den Kanal" mindestGröße="120.0"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Flug der Dämonen" dauer="2" anzahlPlätze="14" image="https://www.heide-park.de/media/sgrj3idf/heide-park-resort_flug-der-dämonen_002.jpg" beschreibung="Deutschlands einziger Wing Coaster" mindestGröße="140.0"/>
   </themenWelten>
-  <themenWelten name="Explorian"/>
+  <themenWelten name="Explorian">
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Dampfkarussell" dauer="2" anzahlPlätze="10" image="https://www.heide-park.de/media/idynslzn/heideparkresort_fahrgeschaeft_nostalgie.jpg" beschreibung="Einfach Zauberhaft"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Ghostbusters 5d" dauer="10" anzahlPlätze="10" image="https://www.heide-park.de/media/qladehdb/heide-park-resort_ghostbusters-5d_002.jpg" beschreibung="Die Ultimative Geisterjagd" mindestGröße="120.0"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Grottenblitz" dauer="2" anzahlPlätze="10" beschreibung="Ein wilder Ritt für waschechte Abenteurer" mindestGröße="100.0"/>
+  </themenWelten>
   <allgemeineInformationen beschreibung="sdfsdfsdfsdf">
     <zeitplan öffnetUm="08:00" schließtUm="17:00" name="Montag"/>
     <zeitplan öffnetUm="09:00" schließtUm="18:00" name="Dienstag"/>
