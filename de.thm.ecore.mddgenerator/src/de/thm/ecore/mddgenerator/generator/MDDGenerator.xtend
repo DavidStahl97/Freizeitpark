@@ -437,7 +437,7 @@ class MDDGenerator {
       <tr «IF design !== null && design.textFarbe3 !== null» style="color: «design.textFarbe3»!important;" «ENDIF»>
         <th scope="row">«o.name»</th>
         <td>«o.preis» €</td>
-        <td>«o.übernachtungIn.name»</td>
+        <td>«IF o.übernachtungIn !== null»«o.übernachtungIn.name»«ENDIF»</td>
         <td>«o.tageGültig»</td>
          <td>
          «FOR p : o.personenGruppen»
