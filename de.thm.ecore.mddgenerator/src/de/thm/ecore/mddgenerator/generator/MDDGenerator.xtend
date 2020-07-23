@@ -327,7 +327,7 @@ class MDDGenerator {
 	      <div class="row">
 	        <div class="col-sm-8 col-md-7 py-4">
 	          <h4 class="text-white"«IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >About</h4>
-	          <p class="text-muted"«IF design !== null && design.textFarbe1 !== null» style="color: «design.textFarbe1»!important;" «ENDIF»>Dies Anwendung soll ihnen einen einmaligen Überblick über unseren Park geben. Alles Facts auf einen Blick. Zögern sie also nicht länger und lassen sie sich überzeugen. Wir freuen uns auf sie!</p>
+	          <p class="text-muted"«IF design !== null && design.textFarbe1 !== null» style="color: «design.textFarbe1»!important;" «ENDIF»>Diese Anwendung soll Ihnen einen einmaligen Überblick über unseren Park geben. Alle Facts auf einen Blick. Zögern sie also nicht länger und lassen sie sich überzeugen. Wir freuen uns auf sie!</p>
 	        </div>
 	        <div class="col-sm-4 offset-md-1 py-4">
 	          <h4 class="text-white" «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Contact</h4>
