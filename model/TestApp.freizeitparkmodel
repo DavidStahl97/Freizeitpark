@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.thm.freizeitparkmodel:Freizeitpark xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.thm.freizeitparkmodel="http://de/thm/freizeitparkmodel" name="Freizeitpark Rust">
+  <themenWelten name="Bucht der Piraten">
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Big Loops" dauer="3" anzahlPlätze="30" image="https://www.heide-park.de/media/e1bbyerj/heide-park-resort_big-loop_003.jpg" beschreibung="Deine Welt steht auf dem Kopf" mindestGröße="120.0"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Bounty" dauer="4" anzahlPlätze="35" image="https://www.heide-park.de/media/33bbtvgs/heide-park-resort_schiffschaukel_002.jpg" beschreibung="Kleine und große Seebären werden in unserer Riesen-Schiffschaukel einen Heidenspaß haben! Auf schwankenden Planken geht es an Bord der Bounty hoch in den Himmel. Bug und Heck des gewaltigen Schiffsrumpfs schaukeln sich auf mehr als 15 Meter Höhe. Selbstverständlich werden die Passagiere durch stabile Bügel sicher in ihren Plätzen gehalten. Den schwankenden Seemanns-Gang hinterher gibt’s gratis dazu!"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Floßfahrt" dauer="6" anzahlPlätze="8" image="https://www.heide-park.de/media/2gqdffzz/heide-park-resort_flossfahrt-2.jpg?anchor=center&amp;mode=crop&amp;width=800&amp;height=800" beschreibung="Lass dich treiben"/>
+  </themenWelten>
+  <themenWelten name="Land der Vergessenen">
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Breakdance" dauer="5" anzahlPlätze="15" image="https://www.heide-park.de/media/ilhl3mnn/heide-park-resort_breakdance-3.jpg" beschreibung="Der bringt das Land der Vergessenen zum Tanzen: Unser Breakdancer nimmt Euch mit auf eine wilde Reise, die das Gleichgewichtsgefühl garantiert außer Kraft setzt. Dafür sorgen die 28 Umdrehungen pro Minute. Übrigens, diese Attraktion ist ein guter Tipp fürs erste Date – denn in den Gondeln kommt man sich dank der umwerfenden Drehungen ganz schnell ganz nah!" mindestGröße="120.0"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Colossos - Kampf der Giganten" dauer="4" anzahlPlätze="20" image="https://www.heide-park.de/media/g4mfdfmi/01_colossos_kampfdergiganten.jpg" beschreibung="Seid ihr bereit für den Kampf zwischen Feuer und Holz" mindestGröße="140.0"/>
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Desert Race" dauer="3" anzahlPlätze="25" image="https://www.heide-park.de/media/mg1hcz4e/heide-park-resort_desertrace_001.jpg" beschreibung="Von 0 auf 100 km/h in 2,4 Sek." mindestGröße="140.0"/>
+  </themenWelten>
+  <themenWelten name="Transsilvanien">
+    <attraktionen xsi:type="de.thm.freizeitparkmodel:Fahrgeschäft" name="Bobbahn" dauer="3" anzahlPlätze="10" image="https://www.heide-park.de/media/kwomuuqe/heide-park-resort_bobbahn_001.jpg" beschreibung="Schießt durch den Kanal" mindestGröße="120.0"/>
+  </themenWelten>
+  <themenWelten name="Explorian"/>
+  <allgemeineInformationen beschreibung="sdfsdfsdfsdf">
+    <zeitplan öffnetUm="08:00" schließtUm="17:00" name="Montag"/>
+    <zeitplan öffnetUm="09:00" schließtUm="18:00" name="Dienstag"/>
+  </allgemeineInformationen>
+</de.thm.freizeitparkmodel:Freizeitpark>
