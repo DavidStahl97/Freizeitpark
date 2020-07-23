@@ -589,7 +589,7 @@ class MDDGenerator {
 		«IF divClosed == false»
 		<div class="col-sm">
 				</div>
-			</div>
+			
 		«ENDIF»
 		'''
 	}
@@ -633,7 +633,7 @@ class MDDGenerator {
 		«IF divClosed == false»
 		<div class="col-sm">
 				</div>
-			</div>
+		
 		«ENDIF»
 		'''
 	}
@@ -670,7 +670,7 @@ class MDDGenerator {
 		«IF divClosed == false»
 		<div class="col-sm">
 		</div>
-			</div>
+		
 		«ENDIF»
 		'''
 	}
