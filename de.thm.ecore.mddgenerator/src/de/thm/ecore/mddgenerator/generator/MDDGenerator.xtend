@@ -24,6 +24,7 @@ import FreizeitparkModel.Hotel
 import FreizeitparkModel.Imbiss
 import FreizeitparkModel.Geschäft
 import FreizeitparkModel.Eintrittskarte
+import FreizeitparkModel.Design
 
 /**
  * The generator for ecore files.
@@ -304,9 +305,11 @@ class MDDGenerator {
 		}
 		return "root"
 	}
-	
+	//style="color: green!important;"
+	//style="background-color: red!important;"
 	def compileFreizeitparkHMTL() {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 <!doctype html>
 <html lang="en">
   <head>
@@ -316,32 +319,32 @@ class MDDGenerator {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
-  <body>       
+  <body «IF design !== null && design.farbe4 !== null» style="background-color: «design.farbe4»!important;" «ENDIF»>       
 
 	<header>
-	  <div class="collapse bg-dark" id="navbarHeader">
+	  <div class="collapse bg-dark" id="navbarHeader"  «IF design !== null && design.farbe1 !== null» style="background-color: «design.farbe1»!important;" «ENDIF»>
 	    <div class="container">
 	      <div class="row">
 	        <div class="col-sm-8 col-md-7 py-4">
-	          <h4 class="text-white">About</h4>
-	          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+	          <h4 class="text-white"«IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >About</h4>
+	          <p class="text-muted"«IF design !== null && design.textFarbe1 !== null» style="color: «design.textFarbe1»!important;" «ENDIF»>Dies Anwendung soll ihnen einen einmaligen Überblick über unseren Park geben. Alles Facts auf einen Blick. Zögern sie also nicht länger und lassen sie sich überzeugen. Wir freuen uns auf sie!</p>
 	        </div>
 	        <div class="col-sm-4 offset-md-1 py-4">
-	          <h4 class="text-white">Contact</h4>
+	          <h4 class="text-white" «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Contact</h4>
 	          <ul class="list-unstyled">
-	            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-	            <li><a href="#" class="text-white">Like on Facebook</a></li>
-	            <li><a href="#" class="text-white">Email me</a></li>
+	            <li><a href="#" class="text-white" «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Follow on Twitter</a></li>
+	            <li><a href="#" class="text-white" «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Like on Facebook</a></li>
+	            <li><a href="#" class="text-white" «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Email me</a></li>
 	          </ul>
 	        </div>
 	      </div>
 	    </div>
 	  </div>
-	  <div class="navbar navbar-dark bg-dark shadow-sm">
+	  <div class="navbar navbar-dark bg-dark shadow-sm" «IF design !== null && design.farbe1 !== null» style="background-color: «design.farbe1»!important;" «ENDIF»>
 	    <div class="container d-flex justify-content-between">
 	      <a href="#" class="navbar-brand d-flex align-items-center">
-	        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-	        <strong>Freizeitpark</strong>
+	        <svg «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+	        <strong «IF design !== null && design.titelFarbe1 !== null» style="color: «design.titelFarbe1»!important;" «ENDIF» >Freizeitpark</strong>
 	      </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
@@ -352,20 +355,20 @@ class MDDGenerator {
 
 	<main>
 		
-		<section class="jumbotron text-center">
+		<section class="jumbotron text-center" «IF design !== null && design.farbe2 !== null» style="background-color: «design.farbe2»!important;" «ENDIF»>
 			<div class="container">
-		  		<h1>«resMymetamodelFile.allContents.toIterable.filter(typeof(Freizeitpark)).head.name»</h1>
-		      	<p class="lead text-muted">«resMymetamodelFile.allContents.toIterable.filter(typeof(AllgemeineInformationen)).head.beschreibung»</p>
+		  		<h1 «IF design !== null && design.titelFarbe2 !== null» style="color: «design.titelFarbe2»!important;" «ENDIF» >«resMymetamodelFile.allContents.toIterable.filter(typeof(Freizeitpark)).head.name»</h1>
+		      	<p «IF design !== null && design.textFarbe2 !== null» style="color: «design.textFarbe2»!important;" «ENDIF» class="lead text-muted">«resMymetamodelFile.allContents.toIterable.filter(typeof(AllgemeineInformationen)).head.beschreibung»</p>
 			</div>
 		</section>
 		
 		<div class="container">
 		
 			<div class="accordion" id="accordionOeffungszeit" style="margin-bottom: 20px">
-			  <div class="card">
+			  <div class="card"  «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 			    <div class="card-header" id="headingOeffnungszeit">
 			      <h2 class="mb-0">
-			        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOeffnungszeit" aria-expanded="true" aria-controls="collapseOeffnungszeit">
+			        <button «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF»  class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOeffnungszeit" aria-expanded="true" aria-controls="collapseOeffnungszeit">
 			          Öffnungszeiten
 			        </button>
 			      </h2>
@@ -380,10 +383,10 @@ class MDDGenerator {
 			</div>
 			
 			<div class="accordion" id="accordionEintrittskarten" style="margin-bottom: 20px">
-						  <div class="card">
+						  <div class="card" «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 						    <div class="card-header" id="headingEintritt">
 						      <h2 class="mb-0">
-						        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseEintritt" aria-expanded="true" aria-controls="collapseEintritt">
+						        <button «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF» class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseEintritt" aria-expanded="true" aria-controls="collapseEintritt">
 						          Eintrittskarten
 						        </button>
 						      </h2>
@@ -418,9 +421,10 @@ class MDDGenerator {
 	
 	def generateEintrittskarten() {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 <table class="table">
   <thead>
-    <tr>
+    <tr «IF design !== null && design.textFarbe3 !== null» style="color: «design.textFarbe3»!important;" «ENDIF»>
       <th scope="col">Name</th>
       <th scope="col">Preis</th>
       <th scope="col">Übernachtung in</th>     
@@ -430,7 +434,7 @@ class MDDGenerator {
   </thead>
   <tbody>
   «FOR o : resMymetamodelFile.allContents.toIterable.filter(typeof(Eintrittskarte))»
-      <tr>
+      <tr «IF design !== null && design.textFarbe3 !== null» style="color: «design.textFarbe3»!important;" «ENDIF»>
         <th scope="row">«o.name»</th>
         <td>«o.preis» €</td>
         <td>«o.übernachtungIn.name»</td>
@@ -449,9 +453,10 @@ class MDDGenerator {
 	
 	def generateOeffungszeiten() {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 <table class="table">
   <thead>
-    <tr>
+    <tr «IF design !== null && design.textFarbe3 !== null» style="color: «design.textFarbe3»!important;" «ENDIF»>
       <th scope="col">Tag</th>
       <th scope="col">Von</th>
       <th scope="col">Bis</th>      
@@ -459,7 +464,7 @@ class MDDGenerator {
   </thead>
   <tbody>
   «FOR o : resMymetamodelFile.allContents.toIterable.filter(typeof(AllgemeineInformationen)).head.zeitplan»
-      <tr>
+      <tr «IF design !== null && design.textFarbe3 !== null» style="color: «design.textFarbe3»!important;" «ENDIF»>
         <th scope="row">«o.name»</th>
         <td>«o.öffnetUm»</td>
         <td>«o.schließtUm»</td>
@@ -472,14 +477,15 @@ class MDDGenerator {
 	
 	def generateThemenwelt() {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 		«var themenweltCount = 0»
 					<div class="accordion" id="accordionExample">
 			  			
 			  			«FOR t : resMymetamodelFile.allContents.toIterable.filter(typeof(Themenwelt))»
-			  			<div class="card">
+			  			<div class="card" «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 			  				<div class="card-header" id="themenwelt«themenweltCount»">
 			  					<h2 class="mb-0">
-			  						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
+			  						<button «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF» class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#themenweltCollapsed«themenweltCount»" aria-expanded="true" aria-controls="themenweltCollapsed«themenweltCount»">
 			  							«t.name»
 			  						</button>
 			  					</h2>
@@ -501,11 +507,12 @@ class MDDGenerator {
 	
 	def generateThemenweltInner(int themenweltId, Themenwelt t) {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 		<div class="accordion" id="accordionThemenweltInner«themenweltId»">                       	
-			<div class="card">
+			<div class="card" «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 				<div class="card-header" id="attraktionen«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsed«themenweltId»" aria-expanded="true" aria-controls="attraktionenCollapsed«themenweltId»"> Attraktionen </button>
+						<button  «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF» class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#attraktionenCollapsed«themenweltId»" aria-expanded="true" aria-controls="attraktionenCollapsed«themenweltId»"> Attraktionen </button>
 					</h3>
 				</div>
 		
@@ -518,10 +525,10 @@ class MDDGenerator {
 			</div>
 					  						                        	
 					  						                        	
-			<div class="card">
+			<div class="card"  «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 				<div class="card-header" id="verkauf«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsed«themenweltId»" aria-expanded="true" aria-controls="verkaufCollapsed«themenweltId»"> Verkäufe </button>
+						<button «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF» class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#verkaufCollapsed«themenweltId»" aria-expanded="true" aria-controls="verkaufCollapsed«themenweltId»"> Verkäufe </button>
 					</h3>
 				</div>
 					  						                        
@@ -532,10 +539,10 @@ class MDDGenerator {
 				</div>  
 			</div> 
 					  						                        	
-			<div class="card">
+			<div class="card"  «IF design !== null && design.farbe3 !== null» style="background-color: «design.farbe3» !important;" «ENDIF»>
 				<div class="card-header" id="uebernachtung«themenweltId»">
 					<h3 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsed«themenweltId»" aria-expanded="true" aria-controls="uebernachtungCollapsed«themenweltId»"> Übernachtung </button>
+						<button «IF design !== null && design.titelFarbe3 !== null» style="color: «design.titelFarbe3»!important;" «ENDIF»  class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#uebernachtungCollapsed«themenweltId»" aria-expanded="true" aria-controls="uebernachtungCollapsed«themenweltId»"> Übernachtung </button>
 					 </h3>
 				</div>
 					  						                        
@@ -551,6 +558,7 @@ class MDDGenerator {
 	
 	def generateUebernachtung(Themenwelt themenwelt) {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 		«var i = 0»
 		«var divClosed = true»
 		«FOR a : themenwelt.übernachtungensmöglichkeiten»
@@ -561,15 +569,15 @@ class MDDGenerator {
 			<div class="card" style="width: 18rem;">
 				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
 				<div class="card-body">
-					<h5 class="card-title">«a.name»</h5>
-					<p class="card-text">«a.beschreibung»</p>
+					<h5 class="card-title" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF»>«a.name»</h5>
+					<p class="card-text" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF»>«a.beschreibung»</p>
 				</div>
 				<ul class="list-group list-group-flush">
 					
-					<li class="list-group-item">Kosten pro Nacht: «a.kostenProNacht»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF»>Kosten pro Nacht: «a.kostenProNacht»</li>
 					
 					«IF a instanceof Hotel»
-					<li class="list-group-item">Sternebewertung: «a.sternBewertung»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF»>Sternebewertung: «a.sternBewertung»</li>
 					«ENDIF»
 				</ul>
 			</div>                          					
@@ -588,6 +596,7 @@ class MDDGenerator {
 	
 	def generateVerkaufslaeden(Themenwelt themenwelt) {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 		«var i = 0»
 		«var divClosed = true»
 		«FOR a : themenwelt.verkaufsLäden»
@@ -598,21 +607,21 @@ class MDDGenerator {
 			<div class="card" style="width: 18rem;">
 				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
 				<div class="card-body">
-					<h5 class="card-title">«a.name»</h5>
-					<p class="card-text">«a.beschreibung»</p>
+					<h5 class="card-title" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF» >«a.name»</h5>
+					<p class="card-text" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF» >«a.beschreibung»</p>
 				</div>
 				<ul class="list-group list-group-flush">
 					«IF a instanceof Gastronomie»
-					<li class="list-group-item">Anzahl Plätz: «a.anzahlPlätze»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Anzahl Plätz: «a.anzahlPlätze»</li>
 					«ENDIF»
 					«IF a instanceof Restaurant»
-					<li class="list-group-item">Sternebewertung: «a.sterneBewertung»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Sternebewertung: «a.sterneBewertung»</li>
 					«ENDIF»
 					«IF a instanceof Imbiss»
-					<li class="list-group-item">Spezialgericht: «a.spezialGericht»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Spezialgericht: «a.spezialGericht»</li>
 					«ENDIF»
 					«IF a instanceof Geschäft»
-					<li class="list-group-item">Verkaufsfläche: «a.verkaufsFläche»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Verkaufsfläche: «a.verkaufsFläche»</li>
 					«ENDIF»
 				</ul>
 			</div>                          					
@@ -631,6 +640,7 @@ class MDDGenerator {
 	
 	def generateAttraktionen(Themenwelt themenwelt) {
 		'''
+		«var design = resMymetamodelFile.allContents.toIterable.filter(typeof(Design)).head»
 		«var i = 0»
 		«var divClosed = true» 
 		«FOR a : themenwelt.attraktionen»
@@ -641,14 +651,14 @@ class MDDGenerator {
 			<div class="card" style="width: 18rem;">
 				<img src="«a.image»" class="card-img-top" alt="Achterbahn"/>
 				<div class="card-body">
-					<h5 class="card-title">«a.name»</h5>
-					<p class="card-text">«a.beschreibung»</p>
+					<h5 class="card-title" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF» >«a.name»</h5>
+					<p class="card-text" «IF design !== null && design.titelFarbe5 !== null» style="color: «design.titelFarbe5»!important;" «ENDIF» >«a.beschreibung»</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Dauer «a.dauer»</li>
-					<li class="list-group-item">Anzahl Plätze «a.anzahlPlätze»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Dauer «a.dauer»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Anzahl Plätze «a.anzahlPlätze»</li>
 					«IF a instanceof Fahrgeschäft»
-					<li class="list-group-item">Mindestgröße «a.mindestGröße»</li>
+					<li class="list-group-item" «IF design !== null && design.textFarbe5 !== null && design.farbe5 !== null» style="color: «design.textFarbe5»!important;background-color: «design.farbe5» !important;" «ENDIF» >Mindestgröße «a.mindestGröße»</li>
 					«ENDIF»
 				</ul>
 			</div>                          					

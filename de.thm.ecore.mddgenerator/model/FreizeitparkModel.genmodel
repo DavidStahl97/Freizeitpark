@@ -24,8 +24,18 @@
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Design">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/titelFarbe1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/textFarbe1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/titelFarbe2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/textFarbe2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/titelFarbe3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/textFarbe3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/farbe5"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/titelFarbe5"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Design/textFarbe5"/>
     </genClasses>
     <genClasses ecoreClass="FreizeitparkModel.ecore#//Eintrittskarte">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FreizeitparkModel.ecore#//Eintrittskarte/tageGültig"/>
